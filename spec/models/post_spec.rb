@@ -1,9 +1,10 @@
 require '../rails_helper'
 
-RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
+# rubocop:disable Metrics/BlockLength
+RSpec.describe Post, type: :model do 
   let(:user) { User.new(name: 'user1') }
 
- subject { Post.new(title: 'testTitle', text: 'testText', comment_counter: 0, like_counter: 2, author: user) }
+  subject { Post.new(title: 'testTitle', text: 'testText', comment_counter: 0, like_counter: 2, author: user) }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
@@ -53,3 +54,4 @@ RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
     expect(subject.recent_comments.count).to eq(5)
   end
 end
+# rubocop:enable Metrics/BlockLength
