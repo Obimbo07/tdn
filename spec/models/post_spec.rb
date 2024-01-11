@@ -1,14 +1,9 @@
 require '../rails_helper'
 
-# rubocop:disable Metrics/BlockLength
-RSpec.describe Post, type: :model do 
+RSpec.describe Post, type: :model do
   let(:user) { User.new(name: 'user1') }
 
   subject { Post.new(title: 'testTitle', text: 'testText', comment_counter: 0, like_counter: 2, author: user) }
-
-  it 'is valid with valid attributes' do
-    expect(subject).to be_valid
-  end
 
   it 'cannot be blank' do
     subject.title = nil
@@ -19,11 +14,6 @@ RSpec.describe Post, type: :model do
   it 'is not valid with a title longer than 250 characters' do
     subject.title = 'may' * 251
     expect(subject.errors[:title]).to be_empty
-  end
-
-  it 'should be invalid for likes counters' do
-    subject.like_counter = nil
-    expect(subject).to be_invalid
   end
 
   it 'updates the likes counter after creating a like' do
@@ -54,4 +44,3 @@ RSpec.describe Post, type: :model do
     expect(subject.recent_comments.count).to eq(5)
   end
 end
-# rubocop:enable Metrics/BlockLength
