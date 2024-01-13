@@ -1,9 +1,9 @@
-require '../rails_helper'
+require_relative '../rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
   let(:user) { User.new(name: 'user1') }
 
-  subject { Post.new(title: 'testTitle', text: 'testText', comment_counter: 0, like_counter: 2, author: user) }
+  subject { Post.new(title: 'testTitle', text: 'Hi', comment_counter: 0, like_counter: 2, author: user) }
 
   it 'cannot be blank' do
     subject.title = nil
@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'updates the post counter after creating a post' do
-    subject.update_posts_counter
+    subject.increment_user_posts_count
     expect(user.posts_counter).to eq(1)
   end
 

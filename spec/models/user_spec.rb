@@ -1,12 +1,12 @@
-require '../rails_helper'
+require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'austin', bio: 'student', post_counter: 1) }
+  subject { User.new(name: 'austin', posts_counter: 1) }
   before { subject.save }
 
   it "name shouldn't be valid" do
     subject.name = nil
-    expect(subject).not_to_be_valid
+    expect(subject).not_to be_valid
   end
 
   it 'name should be valid' do
@@ -15,12 +15,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'post counter should not be valid' do
-    subject.post_counter = nil
-    expect(subject).not_to_be_valid
+    subject.posts_counter = nil
+    expect(subject).not_to be_valid
   end
 
   it 'post counter should be valid' do
-    subject.post_counter = 5
+    subject.posts_counter = 5
     expect(subject).to be_valid
   end
 

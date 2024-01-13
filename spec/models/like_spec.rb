@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe Like, type: :model do
   describe 'Like model' do
@@ -9,7 +9,7 @@ RSpec.describe Like, type: :model do
                          comment_counter: 2)
       like = Like.create(post:, user: user1)
 
-      expect { like.update_likes_counter }.to change { post.reload.like_counter }.by(1)
+      expect { like.increment_post_like_count }.to change { post.reload.like_counter }.by(1)
     end
   end
 end

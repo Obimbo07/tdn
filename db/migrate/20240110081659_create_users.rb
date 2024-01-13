@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.1] # rubocop:disable Style/Documen
       t.string :name
       t.string :photo
       t.string :bio
-      t.integer :posts_counter
+      t.integer :posts_counter, default: 0
 
       t.timestamps
     end
