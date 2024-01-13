@@ -1,6 +1,6 @@
 require_relative '../rails_helper'
 
-RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
+RSpec.describe Post, type: :model do
   let(:user) { User.new(name: 'user1') }
 
   subject { Post.new(title: 'testTitle', text: 'Hi', comment_counter: 0, like_counter: 2, author: user) }
