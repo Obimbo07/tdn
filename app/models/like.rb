@@ -6,10 +6,10 @@ class Like < ApplicationRecord
   after_destroy :decrement_post_like_count
 
   def increment_post_like_count
-    post.increment!(:like_count)
+    post.increment!(:like_counter)
   end
 
   def decrement_post_like_count
-    post.decrement!(:like_count)
+    post.decrement!(:like_counter)
   end
 end
