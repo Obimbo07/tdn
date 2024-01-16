@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do 
-    it 'returns https success' do 
+  describe 'GET /index' do
+    it 'returns https success' do
       user = User.create(name: 'Austin', id: '1')
       get user_post_path(user)
       expect(response).to have_http_status(:success)
     end
   end
-  describe 'GET /show' do 
+  describe 'GET /show' do
     it 'returns https success' do
       user = User.create(name: 'Austin', id: '1')
       post = Post.create(author: user, title: 'Hi', text: 'First Post')
@@ -32,5 +32,3 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 end
-
-
