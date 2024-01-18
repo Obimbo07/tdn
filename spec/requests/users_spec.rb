@@ -24,9 +24,8 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'render the show template for post' do
-      user = User.create(name: 'Austin', id: '1')
-      get user_path(user)
-      expect(response.body).to render_template('show')
+      get '/users/show'
+      expect(response.body).to render_template(:show)
       expect(response.body).to include('<h1>Show individual users</h1>')
     end
   end

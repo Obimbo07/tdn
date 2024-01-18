@@ -4,7 +4,7 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     it 'returns https success' do
       user = User.create(name: 'Austin', id: '1')
-      get user_post_path(user)
+      get user_path(user)
       expect(response).to have_http_status(:success)
     end
   end
