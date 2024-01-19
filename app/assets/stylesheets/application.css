@@ -31,8 +31,8 @@ a:hover {
 }
 
 .user-photo {
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
+  width: 100%;
+  height: 100%;
 }
 
 .img {
