@@ -1,22 +1,22 @@
 class CommentsController < ApplicationController
-    before_action :set_user_and_post, only: %i[new create]
+  before_action :set_user_and_post, only: %i[new create]
 
-    def new
-      store_referer
-      @comment = Comment.new
-    end
+  def new 
+    store_referer
+    @comment = Comment.new
+  end
   
-    def create
-      @comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
+  def create
+    @comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
   
-      if @comment.save
-        redirect_back_or_default(user_post_comments_path(@user, @post))
+    if @comment.save
+      redirect_back_or_default(user_post_comments_path(@user, @post))
       else
         render :new
       end
-    end
+  end
   
-    private
+  private
   
     def comment_params
       params.require(:comment).permit(:text)
