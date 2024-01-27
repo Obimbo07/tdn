@@ -1,6 +1,6 @@
 <h1 style = " color: #336699; margin-top: 12px;">Create a new Post</h1>
 
-<%= form_with model: [@user, @post], url: user_posts_path(@user), method: :post do |form| %>
+<%= form_with model: [@post], url: user_posts_path(@user), method: :post do |form| %>
   <div>
     <h3><%= form.label :title %></h3>
     <%= form.text_field :title, style: "padding: 10px;", placeholder: "Title field for posts" %>
