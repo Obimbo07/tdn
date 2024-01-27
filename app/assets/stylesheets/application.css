@@ -36,8 +36,8 @@ a:hover {
 }
 
 .img {
-  width: 100px;
-  height: 100px;
+  width: 19%;
+  height: auto;
   border: 2px solid #333;
   margin: 10px;
 }
@@ -48,7 +48,7 @@ a:hover {
   border: 2px solid #333;
   padding: 20px;
   margin: 10px;
-  width: 20rem;
+  width: 100%;
 }
 
 .user p {
@@ -60,7 +60,6 @@ a:hover {
   border: 2px solid #333;
   padding: 10px;
   margin: 10px;
-  width: 27.5rem;
 }
 
 .post,
@@ -68,7 +67,6 @@ a:hover {
   border: 2px solid #333;
   padding: 10px;
   margin: 10px;
-  width: 27.5rem;
 }
 
 .count {
@@ -85,6 +83,7 @@ a:hover {
   padding: 5px;
   width: 10rem;
   color: #fff;
+  align-self: center;
 }
 
 .footer {
@@ -93,4 +92,10 @@ a:hover {
   bottom: 0;
   text-align: center;
   background-color: lightgrey;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
