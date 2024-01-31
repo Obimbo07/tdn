@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "User Show View", type: :feature do
-  scenario "User views user show page" do
+RSpec.feature 'User Show View', type: :feature do
+  scenario 'User views user show page' do
     # Create a user with associated posts
     user = User.create(name: 'Alice', photo: 'https://example.com/alice.jpg', bio: 'Test bio')
     post1 = user.posts.create(title: 'Post 1', text: 'First post by Alice', comment_counter: 2, like_counter: 3)
@@ -22,8 +22,8 @@ RSpec.feature "User Show View", type: :feature do
     expect(page).to have_link('Post', href: user_post_path(user, post2))
     expect(page).to have_content(post1.title)
     expect(page).to have_content(post2.title)
-    expect(page).to have_css('.count', text: "Comments: #{post1.comments.count} | Likes: #{post1.likes.count}")
-    expect(page).to have_css('.count', text: "Comments: #{post2.comments.count} | Likes: #{post2.likes.count}")
+    expect(page).to have_css('.count', text: 'Comments: #{post1.comments.count} | Likes: #{post1.likes.count}')
+    expect(page).to have_css('.count', text: 'Comments: #{post2.comments.count} | Likes: #{post2.likes.count}')
 
     expect(page).to have_link('See all posts', href: user_posts_path(user))
   end
