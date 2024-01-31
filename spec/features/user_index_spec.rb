@@ -13,10 +13,10 @@ RSpec.feature 'Users Index View', type: :feature do
     expect(page).to have_link('Alice', href: user_path(user1))
     expect(page).to have_link('Bob', href: user_path(user2))
     within('.user_info', text: 'Alice') do
-      expect(page).to have_content('Number of posts: #{user1.posts.count}')
+      expect(page).to have_content("Number of posts: #{user1.posts.count}")
     end
     within('.user_info', text: 'Bob') do
-      expect(page).to have_content('Number of posts: #{user2.posts.count}')
+      expect(page).to have_content("Number of posts: #{user2.posts.count}")
     end
   end
 end

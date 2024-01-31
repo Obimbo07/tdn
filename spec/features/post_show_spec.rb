@@ -12,8 +12,8 @@ RSpec.feature 'Post Show View', type: :feature do
     expect(page).to have_selector('.container')
     expect(page).to have_selector('.post')
     expect(page).to have_content("Post: #{post.title}")
-    expect(page).to have_css('.count', text: 'Comments: #{post.comments.count}')
-    expect(page).to have_css('.count', text: 'Likes: #{post.likes.count}')
+    expect(page).to have_css('.count', text: "Comments: #{post.comments.count}")
+    expect(page).to have_css('.count', text: "Likes: #{post.likes.count}")
     expect(page).to have_content(post.text)
 
     expect(page).to have_selector('.comments')

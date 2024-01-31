@@ -12,10 +12,10 @@ RSpec.feature 'Post Index View', type: :feature do
     expect(page).to have_content("Number of posts: #{user.posts.count}")
 
     expect(page).to have_selector('.post', count: 1)
-    expect(page).to have_link("Post", href: user_post_path(user, user.posts.first))
+    expect(page).to have_link('Post', href: user_post_path(user, user.posts.first))
     expect(page).to have_content(user.posts.first.text)
-    expect(page).to have_css('.count', text: 'Comments: #{user.posts.first.comments.count}')
-    expect(page).to have_css('.count', text: 'Likes: #{user.posts.first.likes.count}')
+    expect(page).to have_css('.count', text: "Comments: #{user.posts.first.comments.count}")
+    expect(page).to have_css('.count', text: "Likes: #{user.posts.first.likes.count}")
 
     expect(page).to have_selector('.comments', count: 1)
     user.posts.first.recent_comments.each do |comment|

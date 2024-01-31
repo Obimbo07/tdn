@@ -17,13 +17,13 @@ RSpec.feature 'User Show View', type: :feature do
     expect(page).to have_content("Number of posts: #{user.posts.count}")
     expect(page).to have_content(user.bio)
 
-    expect(page).to have_selector('.post', count: 2) 
+    expect(page).to have_selector('.post', count: 2)
     expect(page).to have_link('Post', href: user_post_path(user, post1))
     expect(page).to have_link('Post', href: user_post_path(user, post2))
     expect(page).to have_content(post1.title)
     expect(page).to have_content(post2.title)
-    expect(page).to have_css('.count', text: 'Comments: #{post1.comments.count} | Likes: #{post1.likes.count}')
-    expect(page).to have_css('.count', text: 'Comments: #{post2.comments.count} | Likes: #{post2.likes.count}')
+    expect(page).to have_css('.count', text: "Comments: #{post1.comments.count} | Likes: #{post1.likes.count}")
+    expect(page).to have_css('.count', text: "Comments: #{post2.comments.count} | Likes: #{post2.likes.count}")
 
     expect(page).to have_link('See all posts', href: user_posts_path(user))
   end
