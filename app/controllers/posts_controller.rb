@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_action :set_users, only: %i[index show new]
 
   def index
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments, :likes)
   end
 
   def show
-    @post = @user.posts.find(params[:id])
+    @post = @user.posts.includes(:comments, :likes).find(params[:id])
   end
 
   def new
