@@ -9,17 +9,19 @@
     </div>
   </div>
 <a href=""></a>
-  <% @posts.limit(2).each_with_index do |post, index| %>
+  <% @posts.limit(2).each do |post| %>
     <div class="post">
-      <h3> <%= link_to "Post", user_post_path(@user, post) %> <%= index+1 %> </h2>
+      <h4>Post</h4>
+      <h4> <%= link_to post.title, user_post_path(@user, post) %> </h4>
       <p><%= post.text %></p>
       <p class='count'>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
     </div>
     <div class="comments">
       <% post.recent_comments.each do |comment| %>
-       <p><strong><%= comment.user.name %> :</strong> <%= comment.text %></p>
+       <p><strong><%= comment.author.name %> :</strong> <%= comment.text %></p>
       <% end %>
     </div>
     <% end %> 
-    <%= link_to "Pagination", user_posts_path(@user), class: "button" %>
+    <%= link_to 'Pagination', user_posts_path(@user), class: "button" %>
+    <%= link_to 'Add New post', new_user_post_path(@user), class: 'button' %>
 </div>
