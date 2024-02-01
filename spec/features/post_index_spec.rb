@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Post Index View', type: :feature do
   scenario 'User views post index page' do
-    user = User.create(name: 'Austin', photo: 'https://example', bio: 'Integration test user', posts_counter: 0 )
+    user = User.create(name: 'Austin', photo: 'https://example', bio: 'Integration test user', posts_counter: 0)
     post = Post.create(author: user, title: 'Hi', text: 'First Post', comment_counter: 1, like_counter: 3)
 
     visit user_posts_path(user)
