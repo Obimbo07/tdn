@@ -111,7 +111,7 @@ a:hover {
 }
 
 .placeholder-label {
-  display: none; 
+  display: none;
 }
 
 .login-form input {
@@ -121,13 +121,14 @@ a:hover {
 .login-submit {
   width: 100%;
 }
+
 .login-form input[type="remeber_me"] {
   width: 50%;
 }
 
 .login-form input[type="email"]::placeholder,
 .login-form input[type="password"]::placeholder {
-  color: #999; 
+  color: #999;
 }
 
 .login-form input[type="email"]:focus + .placeholder-label,
