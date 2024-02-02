@@ -1,7 +1,11 @@
 <div class="container">
   <div class="user_info">
     <div class="img">
-      <%= image_tag @user.photo, alt: "User Photo", class: "user-photo"%>
+      <% if @user.photo.present? %>
+        <%= image_tag @user.photo, alt: "User Photo", class: "user-photo" %>
+      <% else %>
+        <%= image_tag "https://cdn-icons-png.flaticon.com/512/21/21104.png", alt: "Default User Photo", class: "user-photo" %>
+      <% end %>
     </div>
     <div class="user">
       <h2><%= @user.name %></h2>
