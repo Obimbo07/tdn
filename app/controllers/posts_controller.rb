@@ -27,6 +27,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @post = current_user.posts.find_by(id: params[:id])
+  
+    if @post
+      @post.likes.destroy_all
+      @post.comments.destroy_all
+      @post.destroy
+      flash[:success] = 'Post was successfully deleted'
+    else
+      flash[:error] = 'Error: Post could not be deleted'
+    end
+    
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def post_params

@@ -16,7 +16,17 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
+  def destroy 
+    @post = Post.find(params[:id])
+    @comment = Comment.find(params[:id])
+    if @comment
+      @comment.destroy
+    else
+      flash[:notice] = "Comment not found"
+    end
+
+    redirect_to user_post_path(@post.author)
+  end
 
   def comment_params
     params.require(:comment).permit(:text)
