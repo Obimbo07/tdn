@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def destroy
     @user = current_user
     @post = current_user.posts.find_by(id: params[:id])
-  
+
     if @post
       @post.likes.destroy_all
       @post.comments.destroy_all
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Error: Post could not be deleted'
     end
-    
+
     redirect_to user_path(current_user)
   end
 
