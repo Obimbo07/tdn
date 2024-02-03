@@ -122,6 +122,18 @@ To run tests, run the following command:
 - GitHub: [@Obimbo07](https://github.com/Obimbo07/)
 - LinkedIn: [Austin Obimbo](https://www.linkedin.com/in/austin-obimbo/)
 - WellFounded: [Austin Obimbo](https://wellfound.com/u/austin-obimbo)
+
+👤 **Afimia Fidelis Izebiafe**
+
+- GitHub: [@Izebiafe](https://github.com/Izebiafe)
+- Twitter: [@Izebiafe](https://twitter.com/Izebiafe)
+- LinkedIn: [Izebiafe](https://www.linkedin.com/in/Izebiafe)
+
+👤 **Evans Kofi Nyamekye**
+- GitHub: [evansnyamekye](https://github.com/evansnyamekye)
+- Twitter: [@nyamekye2131](https://twitter.com/nyamekye2131)
+- LinkedIn: [Evans Kofi Nyamekye](https://www.linkedin.com/in/evans-kofi-nyamekye-1980a4117/)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
