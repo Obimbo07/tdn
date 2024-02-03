@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       authorize! :destroy, @post
       @post.destroy
-      
+
       flash[:success] = 'Post was successfully deleted'
     else
       flash[:error] = 'Error: Post could not be deleted'
