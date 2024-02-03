@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # helper test
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
