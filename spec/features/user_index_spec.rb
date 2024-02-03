@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 RSpec.feature 'Users Index View', type: :feature do
   scenario 'User views users index page' do

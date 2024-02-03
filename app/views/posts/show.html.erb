@@ -4,7 +4,11 @@
     <p class='count'>Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
     <p><%= @post.text %></p>
     <div class="delete-post">
+<<<<<<< HEAD
       <% if can? :destroy , @posts %>
+=======
+      <% if current_user == @user || current_user.admin? %>
+>>>>>>> parent of 49fd473 (merge-fix)
         <%= form_with(url: user_post_path(@user, @post), method: :delete) do |form| %>
           <%= form.submit 'Delete post', data: { confirm: 'Are you sure?' }, class: "delete-button btn" %>
         <% end %>
@@ -16,7 +20,11 @@
       <div class="row align-items-end comment">
         <div class="col">
           <%= comment.user.name %>: <%= comment.text %>
+<<<<<<< HEAD
           <% if can? :destroy , comment %>
+=======
+          <% if current_user == @user || current_user.admin? %>
+>>>>>>> parent of 49fd473 (merge-fix)
             <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete do |form| %>
               <%= form.submit 'Delete Comment', data: { confirm: 'Are you sure?' } %>
             <% end %>
