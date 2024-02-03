@@ -27,7 +27,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   def destroy
     @user = current_user
     @post = current_user.posts.find_by(id: params[:id])
