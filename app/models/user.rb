@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  enum role: { user: 'user', admin: 'admin' }
 
   def is?(requested_role)
     role == requested_role.to_s

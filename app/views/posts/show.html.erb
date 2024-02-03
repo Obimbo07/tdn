@@ -3,6 +3,7 @@
     <h4><%= @post.title %> by <%= @post.author.name %> </h4>
     <p class='count'>Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
     <p><%= @post.text %></p>
+    
     <div class="delete-post">
       <% if can? :destroy , @posts %>
         <%= form_with(url: user_post_path(@user, @post), method: :delete) do |form| %>
