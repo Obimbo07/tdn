@@ -4,7 +4,7 @@
     <p class='count'>Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
     <p><%= @post.text %></p>
     <div class="delete-post">
-      <% if current_user == @user || current_user.admin? %>
+      <% if cannot? :destroy , @user %>
         <%= form_with(url: user_post_path(@user, @post), method: :delete) do |form| %>
           <%= form.submit 'Delete post', data: { confirm: 'Are you sure?' }, class: "delete-button btn" %>
         <% end %>
@@ -16,7 +16,7 @@
       <div class="row align-items-end comment">
         <div class="col">
           <%= comment.user.name %>: <%= comment.text %>
-          <% if current_user == @user || current_user.admin? %>
+          <% if cannot? :destroy , @user %>
             <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete do |form| %>
               <%= form.submit 'Delete Comment', data: { confirm: 'Are you sure?' } %>
             <% end %>

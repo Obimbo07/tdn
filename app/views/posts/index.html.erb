@@ -19,7 +19,7 @@
       <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
       <p><%= post.text %></p>
       <div class="delete-post">
-        <% if current_user == @user || current_user.admin? %>
+        <% if cannot? :destroy , @user %>
           <%= form_with(url: user_post_path(@user, post), method: :delete) do |form| %>
             <%= form.submit 'Delete post', data: { confirm: 'Are you sure?' }, class: "delete-button btn" %>
           <% end %>
