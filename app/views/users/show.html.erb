@@ -22,7 +22,7 @@
       <p><%= post.title %></p>
       <p class='count'>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
       <div class="delete-post">
-        <% if cannot? :destroy , @user %>
+        <% if can? :destroy , post %>
           <%= form_with(url: user_post_path(@user, post), method: :delete) do |form| %>
             <%= form.submit 'Delete post', data: { confirm: 'Are you sure?' }, class: "delete-button btn" %>
           <% end %>
