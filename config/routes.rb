@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  devise_for :users, controllers: { confirmations: 'devise/confirmations'}
+  devise_for :users, controllers: { confirmations: 'devise/confirmations' }
 
   root 'users#index'
 

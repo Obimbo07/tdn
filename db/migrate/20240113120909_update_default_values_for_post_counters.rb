@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateDefaultValuesForPostCounters < ActiveRecord::Migration[7.1]
   def change
     change_column_default :posts, :comment_counter, from: nil, to: 0
