@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This controller provides common functionality for all other controllers
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def index

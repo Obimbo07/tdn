@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This controller provides common functionality for all other controllers
 class LikesController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
 
@@ -9,7 +10,6 @@ class LikesController < ApplicationController
 
   def create
     @post = @user.posts.find(params[:post_id])
-    @like = @post.likes.new(user: current_user)
 
     if @like.save
       redirect_to user_post_path(@user, @post), notice: 'Like was successfully created.'

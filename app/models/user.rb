@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# This helper provides methods for the homepage
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable

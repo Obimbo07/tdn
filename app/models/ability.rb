@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This helper provides methods for the homepage
 class Ability
   include CanCan::Ability
 
