@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-# frozen_string_literal: true
-
-# This helper provides methods for the homepage
->>>>>>> dcecf69b30970763751a1e57ac85f15bdcac83e5
 class Comment < ApplicationRecord
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :post, foreign_key: 'post_id'

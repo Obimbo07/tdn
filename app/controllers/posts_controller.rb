@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-# frozen_string_literal: true
-
-# This controller provides common functionality for all other controllers
->>>>>>> dcecf69b30970763751a1e57ac85f15bdcac83e5
 class PostsController < ApplicationController
   def index
     @user = User.includes(:posts).find(params[:user_id])
