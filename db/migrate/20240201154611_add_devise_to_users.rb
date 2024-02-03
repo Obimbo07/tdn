@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This class represents a Post in the application
 class AddDeviseToUsers < ActiveRecord::Migration[7.1]
   def self.up
     change_table :users do |t|

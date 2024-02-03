@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class AddUserRefToPosts < ActiveRecord::Migration[7.1] # rubocop:disable Style/Documentation
+# This class represents a Post in the application
+class AddUserRefToPosts < ActiveRecord::Migration[7.1]
   def change
     add_reference :posts, :author, null: false, foreign_key: { to_table: :users }
   end

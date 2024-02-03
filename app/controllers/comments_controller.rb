@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# frozen_string_literal: true
+
+# This controller provides common functionality for all other controllers
+>>>>>>> dcecf69b30970763751a1e57ac85f15bdcac83e5
 class CommentsController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
 
