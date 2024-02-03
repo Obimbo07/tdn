@@ -11,6 +11,8 @@
       <div class="user">
         <h2><%= link_to user.name, user_path(user) %></h2>
         <p><strong>Number of posts: </strong><%= user.posts.count %></p>
+        <h2><%= user.role %></h2>
+
       </div>
     </div>
   <% end %>

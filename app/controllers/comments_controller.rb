@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CommentsController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
 
@@ -19,7 +17,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment
       @comment.destroy

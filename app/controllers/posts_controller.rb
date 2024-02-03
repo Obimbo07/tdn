@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
@@ -27,31 +29,20 @@ class PostsController < ApplicationController
     end
   end
 
-  
   def destroy
     @user = current_user
     @post = current_user.posts.find_by(id: params[:id])
-    @post = Post.find(params[:id])authorize! :destroy, @post
-    @post.destroy redirect_to posts_path
 
     if @post
-<<<<<<< HEAD
-      @post.likes.destroy_all
-      @post.comments.destroy_all
-      @post.
-      flash[:sudestroyccess] = 'Post was successfully deleted'
-=======
       @post = Post.find(params[:id])
       authorize! :destroy, @post
       @post.destroy
-
       flash[:success] = 'Post was successfully deleted'
->>>>>>> dd12021e3fe38eb1fe1bbee2acb7726f5ba37020
     else
       flash[:error] = 'Error: Post could not be deleted'
     end
 
-    redirect_to user_post_path(current_user)
+    redirect_to user_path(current_user)
   end
 
   private

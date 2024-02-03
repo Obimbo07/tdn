@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class LikesController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
 
