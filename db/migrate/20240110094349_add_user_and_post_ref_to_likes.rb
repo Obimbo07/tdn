@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class AddUserAndPostRefToLikes < ActiveRecord::Migration[7.1] # rubocop:disable Style/Documentation
+# This class represents a Post in the application
+class AddUserAndPostRefToLikes < ActiveRecord::Migration[7.1]
   def change
     add_reference :likes, :user, null: false, foreign_key: true
     add_reference :likes, :post, null: false, foreign_key: true

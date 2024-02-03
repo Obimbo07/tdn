@@ -21,7 +21,15 @@
       <h3> <%= link_to "Post", user_post_path(@user, post) %> <%= index+1 %> </h2>
       <p><%= post.title %></p>
       <p class='count'>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+      <div class="delete-post">
+        <% if can? :destroy , post %>
+          <%= form_with(url: user_post_path(@user, post), method: :delete) do |form| %>
+            <%= form.submit 'Delete post', data: { confirm: 'Are you sure?' }, class: "delete-button btn" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
+    
   <% end %>
   <%= link_to "See all posts",user_posts_path(@user), class: "button" %> 
 </div>

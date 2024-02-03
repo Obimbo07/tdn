@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This class represents a Post in the application
 class AddDeviseConfirmableToUsers < ActiveRecord::Migration[7.1]
   def change
     add_column :users, :confirmation_token, :string

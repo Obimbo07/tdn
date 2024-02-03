@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
@@ -25,6 +27,22 @@ class PostsController < ApplicationController
       flash[:error] = 'Error: post could not be saved'
       render :new
     end
+  end
+
+  def destroy
+    @user = current_user
+    @post = current_user.posts.find_by(id: params[:id])
+
+    if @post
+      @post = Post.find(params[:id])
+      authorize! :destroy, @post
+      @post.destroy
+      flash[:success] = 'Post was successfully deleted'
+    else
+      flash[:error] = 'Error: Post could not be deleted'
+    end
+
+    redirect_to user_path(current_user)
   end
 
   private
