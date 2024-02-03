@@ -5,7 +5,7 @@ module Api
         users = User.all
         render json: users
       end
- 
+
       def show
         user = User.includes(posts: %i[comments likes]).find(params[:id])
         render json: user
